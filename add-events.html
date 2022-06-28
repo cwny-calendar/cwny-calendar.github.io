@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add events to calendar</title>
+    <style>
+      :root {
+        box-sizing: border-box;
+      }
+      * {
+        box-sizing: inherit;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+      article {
+        width: 100%;
+        max-width: 60em;
+        margin: 0 auto;
+      }
+      h1 {
+        color: #ee8b00;
+        margin: 0.5em;
+      }
+      h2 {
+        font-size: 1.25em;
+      }
+      section {
+        background-color: hsl(35, 100%, 87%);
+        padding: 1em;
+        margin: 0.5em;
+        border-radius: 0.5em;
+      }
+      a#button {
+        background-color: #ee8b00;
+        border-radius: 1em;
+        color: white;
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        margin: 0 auto;
+        padding: 1em;
+        text-align: center;
+        text-decoration: none;
+        width: fit-content;
+      }
+      div#copy {
+        display: flex;
+        /* width: 100%; */
+      }
+      div#copy > input[type="text"] {
+        width: 100%;
+      }
+      div#copy > button {
+        background-color: #ee8b00;
+        color: white;
+        border: 0;
+        padding: 1em;;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <h1>
+        Select calendar to add events
+      </h1>
+      <section>
+        <h2>
+          Google Calendar
+        </h2>
+        <p>Click the button below to be prompted to add to the events to your Google Calendar</p>
+        <a id="button" href="https://calendar.google.com/calendar/u/0?cid=Y19hcGVnMzY1cTBjbWNjM2s3MHA1MnRjbjhnZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t">Add to Google Calendar</a>
+      </section>
+      <section>
+        <h2>
+          iCal
+        </h2>
+        <p>You will need to subscribe to the link of the calendar .ics file. Copy the URL below, then follow the subsequent instructions.</p>
+        <p><small>
+          Steps repurposed from the <a href="https://support.apple.com/guide/iphone/use-multiple-calendars-iph3d1110d4/ios" target="_blank">iPhone User Guide</a>
+        </small></p>
+        <div id="copy">
+          <input type="text" value="https://calendar.google.com/calendar/ical/c_apeg365q0cmcc3k70p52tcn8gg%40group.calendar.google.com/public/basic.ics">
+          <button>Copy</button>
+        </div>
+        <ol>
+          <li>Open Calendar app</li>
+          <li>Tap Calendars at the bottom of the screen, then tap Add Calendar.</li>
+          <li><em>Subscribe to an external, read-only calendar:</em> Tap Add Subscription Calendar, enter the URL copied from above, then click Subscribe.</li>
+        </ol>
+      </section>
+    </article>
+  <script>
+    const inputBox = document.querySelector('div#copy > input[type="text"]');
+    const copyBtn = document.querySelector('div#copy > button');
+    copyBtn.addEventListener('click', (event) => {
+      inputBox.select();
+      navigator.clipboard.writeText(inputBox.value);
+      copyBtn.innerText = 'Copied!';
+    });
+  </script>
+  </body>
+</html>

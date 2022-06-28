@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW NY Calendar</title>
+    <style>
+      :root {
+        box-sizing: border-box;
+      }
+      * {
+        box-sizing: inherit;
+      }
+      a#link {
+        background-color: #ee8b00;
+        border-radius: 1em;
+        color: white;
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        margin: 0 auto;
+        padding: 1em;
+        text-align: center;
+        text-decoration: none;
+        width: fit-content;
+      }
+      body {
+        margin: 0;
+      }
+      div#calendar {
+        margin-bottom: 2em;
+        width: 100vw;
+        height: 40em;
+      }
+      div#calendar > iframe {
+        border: 0;
+        display: block;
+        height: 100%;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 60em;
+      }
+      h1 {
+        color: #ee8b00;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+      @media screen and (max-width: 600px) {
+        a#link {
+          border-radius: 0;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      CW NY Calendar
+    </h1>
+    <div id="calendar">
+      <iframe title="CW NY Calendar" src="https://calendar.google.com/calendar/embed?src=55tjv3s3m5fm5lusli7td2ehnk%40group.calendar.google.com&ctz=America%2FNew_York"></iframe>
+    </div>
+    <a href="#" id="link">ADD EVENTS TO YOUR CALENDAR</a>
+  </body>
+</html>
